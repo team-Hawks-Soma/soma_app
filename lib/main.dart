@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soma_museum_app/presentation/screens/home/home_screen.dart';
+import 'package:soma_museum_app/routing/routing_config.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -17,10 +17,9 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-
-          home: const HomeScreen(),
+          routerConfig: RoutingConfig.router,
         );
       },
     );
