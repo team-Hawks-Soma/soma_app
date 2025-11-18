@@ -27,11 +27,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("소마미술관"),
-        backgroundColor: Colors.orange,
-        foregroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         controller: scrollController,
         child: Column(
