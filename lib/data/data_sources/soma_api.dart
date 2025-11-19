@@ -18,7 +18,7 @@ class SomaApi {
   }) async {
     try {
       final response = await _dio.get(
-        'https://apis.data.go.kr/B551014/SRVC_OD_API_EDCN_CLASS/TODZ_API_EDCN_CLASS_NEW_I',
+        'https://apis.data.go.kr/B551014/SRVC_OD_API_RESERVE_TOUR/todz_api_display_i',
         query: {
           'serviceKey': EnvConfig.apiKey,
           'pageNo': pageNo,
@@ -27,14 +27,13 @@ class SomaApi {
         },
       );
 
-      log('getPrograms API Response : $response');
+      log('getDisplays API Response : $response');
 
       final result =
           (response.data['response']['body']['items']['item'] as List)
               .map((e) => Display.fromJson(e).clean())
               .toList();
 
-      log('text API result : $result');
       return result;
     } catch (e, s) {
       log('$e, $s');
