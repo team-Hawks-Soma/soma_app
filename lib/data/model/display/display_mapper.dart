@@ -4,7 +4,7 @@ import 'package:soma_museum_app/data/model/display/display.dart';
 extension DisplayMapper on Display {
   Display clean() {
     return copyWith(
-      dspyEnddeYmd: TextUtils.cleanCData(dspyEnddeYmd),
+      dspyEnddeYmd: TextUtils.formatDate(TextUtils.cleanCData(dspyEnddeYmd)),
       dspyStateNm: TextUtils.cleanCData(dspyStateNm),
       placeNm: TextUtils.cleanCData(placeNm),
       mnnstNm: TextUtils.cleanCData(mnnstNm),
@@ -14,14 +14,14 @@ extension DisplayMapper on Display {
       viewingCharstCn: TextUtils.cleanCData(viewingCharstCn),
       ebookUrl: TextUtils.cleanCData(ebookUrl),
       ebookNm: TextUtils.cleanCData(ebookNm),
-      dspyImageUrl: TextUtils.cleanCData(dspyImageUrl),
+      dspyImageUrl: TextUtils.toFullUrl(TextUtils.cleanCData(dspyImageUrl)),
       dspyImageNm: TextUtils.cleanCData(dspyImageNm),
       dspyEngNm: TextUtils.cleanCData(dspyEngNm),
       dspyEngCn: TextUtils.cleanCData(dspyEngCn),
       regMngrNo: TextUtils.cleanCData(regMngrNo),
       pavlnCharstNm: TextUtils.cleanCData(pavlnCharstNm),
       dspyNm: TextUtils.cleanCData(dspyNm),
-      dspyBgndeYmd: TextUtils.cleanCData(dspyBgndeYmd),
+      dspyBgndeYmd: TextUtils.formatDate(TextUtils.cleanCData(dspyBgndeYmd)),
     );
   }
 }
