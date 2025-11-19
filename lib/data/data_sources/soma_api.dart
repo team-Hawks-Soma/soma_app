@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:soma_museum_app/core/env_config.dart';
 import 'package:soma_museum_app/core/network/dio_client.dart';
 import 'package:soma_museum_app/data/model/program/program.dart';
+import 'package:soma_museum_app/data/model/program/program_mapper.dart';
 import 'package:soma_museum_app/data/model/sculpture/sculpture.dart';
 
 class SomaApi {
@@ -27,9 +28,9 @@ class SomaApi {
       log('getSculptures API Response : $response');
 
       final result =
-      (response.data['response']['body']['items']['item'] as List)
-          .map((e) => Sculpture.fromJson(e))
-          .toList();
+          (response.data['response']['body']['items']['item'] as List)
+              .map((e) => Sculpture.fromJson(e))
+              .toList();
 
       return result;
     } catch (e, s) {
@@ -45,7 +46,7 @@ class SomaApi {
   }) async {
     try {
       final response = await _dio.get(
-        'https://apis.data.go.kr/B551014/SRVC_OD_API_EDCN_CLASS/todz_api_edcn_class_i',
+        'https://apis.data.go.kr/B551014/SRVC_OD_API_EDCN_CLASS/TODZ_API_EDCN_CLASS_NEW_I',
         query: {
           'serviceKey': EnvConfig.apiKey,
           'pageNo': pageNo,
@@ -57,10 +58,11 @@ class SomaApi {
       log('getPrograms API Response : $response');
 
       final result =
-      (response.data['response']['body']['items']['item'] as List)
-          .map((e) => Program.fromJson(e))
-          .toList();
+          (response.data['response']['body']['items']['item'] as List)
+              .map((e) => Program.fromJson(e).clean())
+              .toList();
 
+      log('text API result : $result');
       return result;
     } catch (e, s) {
       log('$e, $s');
