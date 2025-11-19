@@ -31,4 +31,9 @@ class TextUtils {
 
     return DateFormat('yyyy-MM-dd').format(date);
   }
+
+  static String toFullUrl(String path) {
+    if (path.startsWith("http")) return path;
+    return 'https://soma.kspo.or.kr$path';
+  }
 }
