@@ -1,8 +1,8 @@
 import 'package:soma_museum_app/core/utils/text_utils.dart';
-import 'package:soma_museum_app/data/model/exhibition/exhibition.dart';
+import 'package:soma_museum_app/data/model/display/display.dart';
 
-extension ExhibitionMapper on Exhibition {
-  Exhibition clean() {
+extension DisplayMapper on Display {
+  Display clean() {
     return copyWith(
       dspyEnddeYmd: TextUtils.cleanCData(dspyEnddeYmd),
       dspyStateNm: TextUtils.cleanCData(dspyStateNm),

@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-part 'exhibition.freezed.dart';
-part 'exhibition.g.dart';
+part 'display.freezed.dart';
+part 'display.g.dart';
 
 @freezed
-abstract class Exhibition with _$Exhibition {
+abstract class Display with _$Display {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Exhibition({
+  const factory Display({
     @Default('') String dspyEnddeYmd, // 전시 종료일
     @Default('') String dspyStateNm, // 전시 상태 ex. 종료
     @Default('') String placeNm, // 전시 장소
@@ -26,8 +26,8 @@ abstract class Exhibition with _$Exhibition {
     @Default('') String pavlnCharstNm, // 전시관 ex. 1관
     @Default('') String dspyNm, // 전시명
     @Default('') String dspyBgndeYmd, // 전시 시작일
-  }) = _Exhibition;
+  }) = _Display;
 
-  factory Exhibition.fromJson(Map<String, Object?> json) =>
-      _$ExhibitionFromJson(json);
+  factory Display.fromJson(Map<String, Object?> json) =>
+      _$DisplayFromJson(json);
 }
