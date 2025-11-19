@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soma_museum_app/presentation/screens/home/home_screen.dart';
+import 'package:soma_museum_app/presentation/screens/program/program_screen.dart';
 import 'package:soma_museum_app/presentation/screens/sculpture/sculpture_screen.dart';
 import 'package:soma_museum_app/presentation/widgets/custom_navigation_bar.dart';
 
@@ -17,7 +18,7 @@ class NavigationScreen extends ConsumerWidget {
       HomeScreen(),
       PlaceholderScreen(title: "전시"),
       SculptureScreen(),
-      PlaceholderScreen(title: "교육프로그램"),
+      ProgramScreen(),
     ];
 
     return Scaffold(
