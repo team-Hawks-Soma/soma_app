@@ -15,19 +15,19 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Program {
 
- String get classEndYmd;// 교육종료일자
+ String get clssEndYmd;// 교육종료일자
  String get simTextCn;// 설명내용
  String get letTxtCn;// 상세설명내용
  String get rowNum;// 순번
  String get placeNm;// 교육장소명
  String get ttnAmt;// 수강비용금액
- String get classMbrCdNm;// 정원구분명
- String get classStYmd;// 교육시작일자
+ String get clssMbrCdNm;// 정원구분명
+ String get clssStYmd;// 교육시작일자
  String get rcvCCdNm;// 접수상태코드명
  String get itemUrl;// 자료URL
- String get classCNm;// 교육종류명
- String get classNm;// 교육명
- String get classCCdNm;
+ String get clssCNm;// 교육종류명
+ String get clssNm;// 교육명
+ String get clssCCdNm;
 /// Create a copy of Program
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -40,16 +40,16 @@ $ProgramCopyWith<Program> get copyWith => _$ProgramCopyWithImpl<Program>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Program&&(identical(other.classEndYmd, classEndYmd) || other.classEndYmd == classEndYmd)&&(identical(other.simTextCn, simTextCn) || other.simTextCn == simTextCn)&&(identical(other.letTxtCn, letTxtCn) || other.letTxtCn == letTxtCn)&&(identical(other.rowNum, rowNum) || other.rowNum == rowNum)&&(identical(other.placeNm, placeNm) || other.placeNm == placeNm)&&(identical(other.ttnAmt, ttnAmt) || other.ttnAmt == ttnAmt)&&(identical(other.classMbrCdNm, classMbrCdNm) || other.classMbrCdNm == classMbrCdNm)&&(identical(other.classStYmd, classStYmd) || other.classStYmd == classStYmd)&&(identical(other.rcvCCdNm, rcvCCdNm) || other.rcvCCdNm == rcvCCdNm)&&(identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl)&&(identical(other.classCNm, classCNm) || other.classCNm == classCNm)&&(identical(other.classNm, classNm) || other.classNm == classNm)&&(identical(other.classCCdNm, classCCdNm) || other.classCCdNm == classCCdNm));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Program&&(identical(other.clssEndYmd, clssEndYmd) || other.clssEndYmd == clssEndYmd)&&(identical(other.simTextCn, simTextCn) || other.simTextCn == simTextCn)&&(identical(other.letTxtCn, letTxtCn) || other.letTxtCn == letTxtCn)&&(identical(other.rowNum, rowNum) || other.rowNum == rowNum)&&(identical(other.placeNm, placeNm) || other.placeNm == placeNm)&&(identical(other.ttnAmt, ttnAmt) || other.ttnAmt == ttnAmt)&&(identical(other.clssMbrCdNm, clssMbrCdNm) || other.clssMbrCdNm == clssMbrCdNm)&&(identical(other.clssStYmd, clssStYmd) || other.clssStYmd == clssStYmd)&&(identical(other.rcvCCdNm, rcvCCdNm) || other.rcvCCdNm == rcvCCdNm)&&(identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl)&&(identical(other.clssCNm, clssCNm) || other.clssCNm == clssCNm)&&(identical(other.clssNm, clssNm) || other.clssNm == clssNm)&&(identical(other.clssCCdNm, clssCCdNm) || other.clssCCdNm == clssCCdNm));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,classEndYmd,simTextCn,letTxtCn,rowNum,placeNm,ttnAmt,classMbrCdNm,classStYmd,rcvCCdNm,itemUrl,classCNm,classNm,classCCdNm);
+int get hashCode => Object.hash(runtimeType,clssEndYmd,simTextCn,letTxtCn,rowNum,placeNm,ttnAmt,clssMbrCdNm,clssStYmd,rcvCCdNm,itemUrl,clssCNm,clssNm,clssCCdNm);
 
 @override
 String toString() {
-  return 'Program(classEndYmd: $classEndYmd, simTextCn: $simTextCn, letTxtCn: $letTxtCn, rowNum: $rowNum, placeNm: $placeNm, ttnAmt: $ttnAmt, classMbrCdNm: $classMbrCdNm, classStYmd: $classStYmd, rcvCCdNm: $rcvCCdNm, itemUrl: $itemUrl, classCNm: $classCNm, classNm: $classNm, classCCdNm: $classCCdNm)';
+  return 'Program(clssEndYmd: $clssEndYmd, simTextCn: $simTextCn, letTxtCn: $letTxtCn, rowNum: $rowNum, placeNm: $placeNm, ttnAmt: $ttnAmt, clssMbrCdNm: $clssMbrCdNm, clssStYmd: $clssStYmd, rcvCCdNm: $rcvCCdNm, itemUrl: $itemUrl, clssCNm: $clssCNm, clssNm: $clssNm, clssCCdNm: $clssCCdNm)';
 }
 
 
@@ -60,7 +60,7 @@ abstract mixin class $ProgramCopyWith<$Res>  {
   factory $ProgramCopyWith(Program value, $Res Function(Program) _then) = _$ProgramCopyWithImpl;
 @useResult
 $Res call({
- String classEndYmd, String simTextCn, String letTxtCn, String rowNum, String placeNm, String ttnAmt, String classMbrCdNm, String classStYmd, String rcvCCdNm, String itemUrl, String classCNm, String classNm, String classCCdNm
+ String clssEndYmd, String simTextCn, String letTxtCn, String rowNum, String placeNm, String ttnAmt, String clssMbrCdNm, String clssStYmd, String rcvCCdNm, String itemUrl, String clssCNm, String clssNm, String clssCCdNm
 });
 
 
@@ -77,21 +77,21 @@ class _$ProgramCopyWithImpl<$Res>
 
 /// Create a copy of Program
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? classEndYmd = null,Object? simTextCn = null,Object? letTxtCn = null,Object? rowNum = null,Object? placeNm = null,Object? ttnAmt = null,Object? classMbrCdNm = null,Object? classStYmd = null,Object? rcvCCdNm = null,Object? itemUrl = null,Object? classCNm = null,Object? classNm = null,Object? classCCdNm = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? clssEndYmd = null,Object? simTextCn = null,Object? letTxtCn = null,Object? rowNum = null,Object? placeNm = null,Object? ttnAmt = null,Object? clssMbrCdNm = null,Object? clssStYmd = null,Object? rcvCCdNm = null,Object? itemUrl = null,Object? clssCNm = null,Object? clssNm = null,Object? clssCCdNm = null,}) {
   return _then(_self.copyWith(
-classEndYmd: null == classEndYmd ? _self.classEndYmd : classEndYmd // ignore: cast_nullable_to_non_nullable
+clssEndYmd: null == clssEndYmd ? _self.clssEndYmd : clssEndYmd // ignore: cast_nullable_to_non_nullable
 as String,simTextCn: null == simTextCn ? _self.simTextCn : simTextCn // ignore: cast_nullable_to_non_nullable
 as String,letTxtCn: null == letTxtCn ? _self.letTxtCn : letTxtCn // ignore: cast_nullable_to_non_nullable
 as String,rowNum: null == rowNum ? _self.rowNum : rowNum // ignore: cast_nullable_to_non_nullable
 as String,placeNm: null == placeNm ? _self.placeNm : placeNm // ignore: cast_nullable_to_non_nullable
 as String,ttnAmt: null == ttnAmt ? _self.ttnAmt : ttnAmt // ignore: cast_nullable_to_non_nullable
-as String,classMbrCdNm: null == classMbrCdNm ? _self.classMbrCdNm : classMbrCdNm // ignore: cast_nullable_to_non_nullable
-as String,classStYmd: null == classStYmd ? _self.classStYmd : classStYmd // ignore: cast_nullable_to_non_nullable
+as String,clssMbrCdNm: null == clssMbrCdNm ? _self.clssMbrCdNm : clssMbrCdNm // ignore: cast_nullable_to_non_nullable
+as String,clssStYmd: null == clssStYmd ? _self.clssStYmd : clssStYmd // ignore: cast_nullable_to_non_nullable
 as String,rcvCCdNm: null == rcvCCdNm ? _self.rcvCCdNm : rcvCCdNm // ignore: cast_nullable_to_non_nullable
 as String,itemUrl: null == itemUrl ? _self.itemUrl : itemUrl // ignore: cast_nullable_to_non_nullable
-as String,classCNm: null == classCNm ? _self.classCNm : classCNm // ignore: cast_nullable_to_non_nullable
-as String,classNm: null == classNm ? _self.classNm : classNm // ignore: cast_nullable_to_non_nullable
-as String,classCCdNm: null == classCCdNm ? _self.classCCdNm : classCCdNm // ignore: cast_nullable_to_non_nullable
+as String,clssCNm: null == clssCNm ? _self.clssCNm : clssCNm // ignore: cast_nullable_to_non_nullable
+as String,clssNm: null == clssNm ? _self.clssNm : clssNm // ignore: cast_nullable_to_non_nullable
+as String,clssCCdNm: null == clssCCdNm ? _self.clssCCdNm : clssCCdNm // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -177,10 +177,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String classEndYmd,  String simTextCn,  String letTxtCn,  String rowNum,  String placeNm,  String ttnAmt,  String classMbrCdNm,  String classStYmd,  String rcvCCdNm,  String itemUrl,  String classCNm,  String classNm,  String classCCdNm)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String clssEndYmd,  String simTextCn,  String letTxtCn,  String rowNum,  String placeNm,  String ttnAmt,  String clssMbrCdNm,  String clssStYmd,  String rcvCCdNm,  String itemUrl,  String clssCNm,  String clssNm,  String clssCCdNm)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Program() when $default != null:
-return $default(_that.classEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_that.placeNm,_that.ttnAmt,_that.classMbrCdNm,_that.classStYmd,_that.rcvCCdNm,_that.itemUrl,_that.classCNm,_that.classNm,_that.classCCdNm);case _:
+return $default(_that.clssEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_that.placeNm,_that.ttnAmt,_that.clssMbrCdNm,_that.clssStYmd,_that.rcvCCdNm,_that.itemUrl,_that.clssCNm,_that.clssNm,_that.clssCCdNm);case _:
   return orElse();
 
 }
@@ -198,10 +198,10 @@ return $default(_that.classEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String classEndYmd,  String simTextCn,  String letTxtCn,  String rowNum,  String placeNm,  String ttnAmt,  String classMbrCdNm,  String classStYmd,  String rcvCCdNm,  String itemUrl,  String classCNm,  String classNm,  String classCCdNm)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String clssEndYmd,  String simTextCn,  String letTxtCn,  String rowNum,  String placeNm,  String ttnAmt,  String clssMbrCdNm,  String clssStYmd,  String rcvCCdNm,  String itemUrl,  String clssCNm,  String clssNm,  String clssCCdNm)  $default,) {final _that = this;
 switch (_that) {
 case _Program():
-return $default(_that.classEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_that.placeNm,_that.ttnAmt,_that.classMbrCdNm,_that.classStYmd,_that.rcvCCdNm,_that.itemUrl,_that.classCNm,_that.classNm,_that.classCCdNm);case _:
+return $default(_that.clssEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_that.placeNm,_that.ttnAmt,_that.clssMbrCdNm,_that.clssStYmd,_that.rcvCCdNm,_that.itemUrl,_that.clssCNm,_that.clssNm,_that.clssCCdNm);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -218,10 +218,10 @@ return $default(_that.classEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String classEndYmd,  String simTextCn,  String letTxtCn,  String rowNum,  String placeNm,  String ttnAmt,  String classMbrCdNm,  String classStYmd,  String rcvCCdNm,  String itemUrl,  String classCNm,  String classNm,  String classCCdNm)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String clssEndYmd,  String simTextCn,  String letTxtCn,  String rowNum,  String placeNm,  String ttnAmt,  String clssMbrCdNm,  String clssStYmd,  String rcvCCdNm,  String itemUrl,  String clssCNm,  String clssNm,  String clssCCdNm)?  $default,) {final _that = this;
 switch (_that) {
 case _Program() when $default != null:
-return $default(_that.classEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_that.placeNm,_that.ttnAmt,_that.classMbrCdNm,_that.classStYmd,_that.rcvCCdNm,_that.itemUrl,_that.classCNm,_that.classNm,_that.classCCdNm);case _:
+return $default(_that.clssEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_that.placeNm,_that.ttnAmt,_that.clssMbrCdNm,_that.clssStYmd,_that.rcvCCdNm,_that.itemUrl,_that.clssCNm,_that.clssNm,_that.clssCCdNm);case _:
   return null;
 
 }
@@ -233,10 +233,10 @@ return $default(_that.classEndYmd,_that.simTextCn,_that.letTxtCn,_that.rowNum,_t
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _Program implements Program {
-  const _Program({this.classEndYmd = '', this.simTextCn = '', this.letTxtCn = '', this.rowNum = '', this.placeNm = '', this.ttnAmt = '', this.classMbrCdNm = '', this.classStYmd = '', this.rcvCCdNm = '', this.itemUrl = '', this.classCNm = '', this.classNm = '', this.classCCdNm = ''});
+  const _Program({this.clssEndYmd = '', this.simTextCn = '', this.letTxtCn = '', this.rowNum = '', this.placeNm = '', this.ttnAmt = '', this.clssMbrCdNm = '', this.clssStYmd = '', this.rcvCCdNm = '', this.itemUrl = '', this.clssCNm = '', this.clssNm = '', this.clssCCdNm = ''});
   factory _Program.fromJson(Map<String, dynamic> json) => _$ProgramFromJson(json);
 
-@override@JsonKey() final  String classEndYmd;
+@override@JsonKey() final  String clssEndYmd;
 // 교육종료일자
 @override@JsonKey() final  String simTextCn;
 // 설명내용
@@ -248,19 +248,19 @@ class _Program implements Program {
 // 교육장소명
 @override@JsonKey() final  String ttnAmt;
 // 수강비용금액
-@override@JsonKey() final  String classMbrCdNm;
+@override@JsonKey() final  String clssMbrCdNm;
 // 정원구분명
-@override@JsonKey() final  String classStYmd;
+@override@JsonKey() final  String clssStYmd;
 // 교육시작일자
 @override@JsonKey() final  String rcvCCdNm;
 // 접수상태코드명
 @override@JsonKey() final  String itemUrl;
 // 자료URL
-@override@JsonKey() final  String classCNm;
+@override@JsonKey() final  String clssCNm;
 // 교육종류명
-@override@JsonKey() final  String classNm;
+@override@JsonKey() final  String clssNm;
 // 교육명
-@override@JsonKey() final  String classCCdNm;
+@override@JsonKey() final  String clssCCdNm;
 
 /// Create a copy of Program
 /// with the given fields replaced by the non-null parameter values.
@@ -275,16 +275,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Program&&(identical(other.classEndYmd, classEndYmd) || other.classEndYmd == classEndYmd)&&(identical(other.simTextCn, simTextCn) || other.simTextCn == simTextCn)&&(identical(other.letTxtCn, letTxtCn) || other.letTxtCn == letTxtCn)&&(identical(other.rowNum, rowNum) || other.rowNum == rowNum)&&(identical(other.placeNm, placeNm) || other.placeNm == placeNm)&&(identical(other.ttnAmt, ttnAmt) || other.ttnAmt == ttnAmt)&&(identical(other.classMbrCdNm, classMbrCdNm) || other.classMbrCdNm == classMbrCdNm)&&(identical(other.classStYmd, classStYmd) || other.classStYmd == classStYmd)&&(identical(other.rcvCCdNm, rcvCCdNm) || other.rcvCCdNm == rcvCCdNm)&&(identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl)&&(identical(other.classCNm, classCNm) || other.classCNm == classCNm)&&(identical(other.classNm, classNm) || other.classNm == classNm)&&(identical(other.classCCdNm, classCCdNm) || other.classCCdNm == classCCdNm));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Program&&(identical(other.clssEndYmd, clssEndYmd) || other.clssEndYmd == clssEndYmd)&&(identical(other.simTextCn, simTextCn) || other.simTextCn == simTextCn)&&(identical(other.letTxtCn, letTxtCn) || other.letTxtCn == letTxtCn)&&(identical(other.rowNum, rowNum) || other.rowNum == rowNum)&&(identical(other.placeNm, placeNm) || other.placeNm == placeNm)&&(identical(other.ttnAmt, ttnAmt) || other.ttnAmt == ttnAmt)&&(identical(other.clssMbrCdNm, clssMbrCdNm) || other.clssMbrCdNm == clssMbrCdNm)&&(identical(other.clssStYmd, clssStYmd) || other.clssStYmd == clssStYmd)&&(identical(other.rcvCCdNm, rcvCCdNm) || other.rcvCCdNm == rcvCCdNm)&&(identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl)&&(identical(other.clssCNm, clssCNm) || other.clssCNm == clssCNm)&&(identical(other.clssNm, clssNm) || other.clssNm == clssNm)&&(identical(other.clssCCdNm, clssCCdNm) || other.clssCCdNm == clssCCdNm));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,classEndYmd,simTextCn,letTxtCn,rowNum,placeNm,ttnAmt,classMbrCdNm,classStYmd,rcvCCdNm,itemUrl,classCNm,classNm,classCCdNm);
+int get hashCode => Object.hash(runtimeType,clssEndYmd,simTextCn,letTxtCn,rowNum,placeNm,ttnAmt,clssMbrCdNm,clssStYmd,rcvCCdNm,itemUrl,clssCNm,clssNm,clssCCdNm);
 
 @override
 String toString() {
-  return 'Program(classEndYmd: $classEndYmd, simTextCn: $simTextCn, letTxtCn: $letTxtCn, rowNum: $rowNum, placeNm: $placeNm, ttnAmt: $ttnAmt, classMbrCdNm: $classMbrCdNm, classStYmd: $classStYmd, rcvCCdNm: $rcvCCdNm, itemUrl: $itemUrl, classCNm: $classCNm, classNm: $classNm, classCCdNm: $classCCdNm)';
+  return 'Program(clssEndYmd: $clssEndYmd, simTextCn: $simTextCn, letTxtCn: $letTxtCn, rowNum: $rowNum, placeNm: $placeNm, ttnAmt: $ttnAmt, clssMbrCdNm: $clssMbrCdNm, clssStYmd: $clssStYmd, rcvCCdNm: $rcvCCdNm, itemUrl: $itemUrl, clssCNm: $clssCNm, clssNm: $clssNm, clssCCdNm: $clssCCdNm)';
 }
 
 
@@ -295,7 +295,7 @@ abstract mixin class _$ProgramCopyWith<$Res> implements $ProgramCopyWith<$Res> {
   factory _$ProgramCopyWith(_Program value, $Res Function(_Program) _then) = __$ProgramCopyWithImpl;
 @override @useResult
 $Res call({
- String classEndYmd, String simTextCn, String letTxtCn, String rowNum, String placeNm, String ttnAmt, String classMbrCdNm, String classStYmd, String rcvCCdNm, String itemUrl, String classCNm, String classNm, String classCCdNm
+ String clssEndYmd, String simTextCn, String letTxtCn, String rowNum, String placeNm, String ttnAmt, String clssMbrCdNm, String clssStYmd, String rcvCCdNm, String itemUrl, String clssCNm, String clssNm, String clssCCdNm
 });
 
 
@@ -312,21 +312,21 @@ class __$ProgramCopyWithImpl<$Res>
 
 /// Create a copy of Program
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? classEndYmd = null,Object? simTextCn = null,Object? letTxtCn = null,Object? rowNum = null,Object? placeNm = null,Object? ttnAmt = null,Object? classMbrCdNm = null,Object? classStYmd = null,Object? rcvCCdNm = null,Object? itemUrl = null,Object? classCNm = null,Object? classNm = null,Object? classCCdNm = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? clssEndYmd = null,Object? simTextCn = null,Object? letTxtCn = null,Object? rowNum = null,Object? placeNm = null,Object? ttnAmt = null,Object? clssMbrCdNm = null,Object? clssStYmd = null,Object? rcvCCdNm = null,Object? itemUrl = null,Object? clssCNm = null,Object? clssNm = null,Object? clssCCdNm = null,}) {
   return _then(_Program(
-classEndYmd: null == classEndYmd ? _self.classEndYmd : classEndYmd // ignore: cast_nullable_to_non_nullable
+clssEndYmd: null == clssEndYmd ? _self.clssEndYmd : clssEndYmd // ignore: cast_nullable_to_non_nullable
 as String,simTextCn: null == simTextCn ? _self.simTextCn : simTextCn // ignore: cast_nullable_to_non_nullable
 as String,letTxtCn: null == letTxtCn ? _self.letTxtCn : letTxtCn // ignore: cast_nullable_to_non_nullable
 as String,rowNum: null == rowNum ? _self.rowNum : rowNum // ignore: cast_nullable_to_non_nullable
 as String,placeNm: null == placeNm ? _self.placeNm : placeNm // ignore: cast_nullable_to_non_nullable
 as String,ttnAmt: null == ttnAmt ? _self.ttnAmt : ttnAmt // ignore: cast_nullable_to_non_nullable
-as String,classMbrCdNm: null == classMbrCdNm ? _self.classMbrCdNm : classMbrCdNm // ignore: cast_nullable_to_non_nullable
-as String,classStYmd: null == classStYmd ? _self.classStYmd : classStYmd // ignore: cast_nullable_to_non_nullable
+as String,clssMbrCdNm: null == clssMbrCdNm ? _self.clssMbrCdNm : clssMbrCdNm // ignore: cast_nullable_to_non_nullable
+as String,clssStYmd: null == clssStYmd ? _self.clssStYmd : clssStYmd // ignore: cast_nullable_to_non_nullable
 as String,rcvCCdNm: null == rcvCCdNm ? _self.rcvCCdNm : rcvCCdNm // ignore: cast_nullable_to_non_nullable
 as String,itemUrl: null == itemUrl ? _self.itemUrl : itemUrl // ignore: cast_nullable_to_non_nullable
-as String,classCNm: null == classCNm ? _self.classCNm : classCNm // ignore: cast_nullable_to_non_nullable
-as String,classNm: null == classNm ? _self.classNm : classNm // ignore: cast_nullable_to_non_nullable
-as String,classCCdNm: null == classCCdNm ? _self.classCCdNm : classCCdNm // ignore: cast_nullable_to_non_nullable
+as String,clssCNm: null == clssCNm ? _self.clssCNm : clssCNm // ignore: cast_nullable_to_non_nullable
+as String,clssNm: null == clssNm ? _self.clssNm : clssNm // ignore: cast_nullable_to_non_nullable
+as String,clssCCdNm: null == clssCCdNm ? _self.clssCCdNm : clssCCdNm // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

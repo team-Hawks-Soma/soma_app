@@ -12,7 +12,7 @@ class ProgramNotifier extends AsyncNotifier<ProgramState> {
   final _somaApi = SomaApi();
 
   @override
-  FutureOr<ProgramState> build() async {
+  Future<ProgramState> build() async {
     final programs = await _somaApi.getPrograms();
     return ProgramState(programs: programs, currentPage: 1);
   }
