@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class TextUtils {
   // CData -> Data
   static String cleanCData(String? value) {
@@ -21,5 +23,17 @@ class TextUtils {
     result = result.trim();
 
     return result;
+  }
+
+  // 20251119 -> 2025-11-19 형식으로 변경
+  static String formatDate(String dateString) {
+    final date = DateTime.parse(dateString);
+
+    return DateFormat('yyyy-MM-dd').format(date);
+  }
+
+  static String toFullUrl(String path) {
+    if (path.startsWith("http")) return path;
+    return 'https://soma.kspo.or.kr$path';
   }
 }
