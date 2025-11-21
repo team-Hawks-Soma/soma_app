@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:soma_museum_app/presentation/providers/sculpture/sculpture_provider.dart';
 
 class SculptureScreen extends ConsumerWidget {
@@ -28,13 +29,22 @@ class SculptureScreen extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      AspectRatio(
-                        aspectRatio: 1,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16.r),
-                          child: Image.network(
-                            state.sculptures[index].imageUrl,
-                            fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          context.push(
+                            '/sculpture/detail',
+                            extra: state.sculptures[index],
+                          );
+                        },
+                        child: AspectRatio(
+                          aspectRatio: 1,
+
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16.r),
+                            child: Image.network(
+                              state.sculptures[index].imageUrl,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
