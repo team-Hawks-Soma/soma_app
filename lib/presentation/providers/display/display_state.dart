@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:soma_museum_app/data/model/display/display.dart';
+import 'package:soma_museum_app/data/model/display/dto/display.dart';
 
 part 'display_state.freezed.dart';
 part 'display_state.g.dart';

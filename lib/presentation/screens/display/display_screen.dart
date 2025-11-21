@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soma_museum_app/data/model/display/display.dart';
+import 'package:soma_museum_app/data/model/display/dto/display.dart';
 import 'package:soma_museum_app/presentation/providers/display/display_provider.dart';
 
 class DisplayScreen extends ConsumerWidget {
