@@ -14,6 +14,10 @@ class ObjectboxDataSource {
 
   Box<T> box<T>() => _store.box<T>();
 
+  int clear<T>() {
+    return box<T>().removeAll();
+  }
+
   int save<T>(T entity) {
     return box<T>().put(entity);
   }
