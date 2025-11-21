@@ -34,15 +34,20 @@ class DisplayNotifier extends AsyncNotifier<DisplayState> {
 
       // 로컬에 저장된 값이 있으면 그대로 리턴
       if (displayEntities.isNotEmpty) {
+        // 정해둔 기간을 넘어서 만료되었는지 확인
         final isExpired =
             DateTime.now().difference(displayEntities.first.updatedAt).inHours >
             24;
 
         if (!isExpired) {
+          // 만료되지 않은 로컬DB값이면, 그대로 리턴
           return displayEntities.map((e) => e.toDto()).toList();
         }
       }
+
+      // 로컬DB에 없거나, 만료된 항목들은 일단 초기화
       _objectboxDataSource.clear<DisplayEntity>();
+      // API 호출 및 로컬DB에 Entity 형태로 저장
       final displays = await _somaApi.getDisplays();
       _objectboxDataSource.saveList<DisplayEntity>(
         displays.map((e) => e.toEntity()).toList(),
