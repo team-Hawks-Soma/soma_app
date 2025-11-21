@@ -1,6 +1,6 @@
 import 'package:soma_museum_app/core/utils/text_utils.dart';
-import 'package:soma_museum_app/data/model/display/display.dart';
-import 'package:soma_museum_app/data/model/entity/display_entity.dart';
+import 'package:soma_museum_app/data/model/display/dto/display.dart';
+import 'package:soma_museum_app/data/model/display/entity/display_entity.dart';
 
 extension DisplayMapper on Display {
   Display clean() {
@@ -46,6 +46,7 @@ extension DisplayMapper on Display {
       pavlnCharstNm: pavlnCharstNm,
       dspyNm: dspyNm,
       dspyBgndeYmd: dspyBgndeYmd,
+      updatedAt: DateTime.now(),
     );
   }
 }

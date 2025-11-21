@@ -2,7 +2,7 @@ import 'package:objectbox/objectbox.dart';
 
 @Entity()
 class DisplayEntity {
-  @Id(assignable: true)
+  @Id()
   int id;
   String dspyEnddeYmd; // 전시 종료일
   String dspyStateNm; // 전시 상태
@@ -22,6 +22,7 @@ class DisplayEntity {
   String pavlnCharstNm; // 전시관
   String dspyNm; // 전시명
   String dspyBgndeYmd; // 전시 시작일
+  DateTime updatedAt; //  캐싱된 시간 (캐시 만료 체크용)
 
   DisplayEntity({
     this.id = 0,
@@ -43,5 +44,6 @@ class DisplayEntity {
     this.pavlnCharstNm = '',
     this.dspyNm = '',
     this.dspyBgndeYmd = '',
+    required this.updatedAt,
   });
 }
