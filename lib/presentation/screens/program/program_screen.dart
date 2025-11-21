@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../providers/program/program_provider.dart';
 
@@ -30,12 +31,39 @@ class ProgramScreen extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-
                       Text(state.programs[index].clssCCdNm),
                       Text(state.programs[index].clssNm),
                       Text(state.programs[index].clssStYmd),
                       Text(state.programs[index].clssEndYmd),
                       Text(state.programs[index].ttnAmt),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Text(
+                                "신청",
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8.w),
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: () {
+                                context.push(
+                                  '/program/detail',
+                                  extra: state.programs[index],
+                                );
+                              },
+                              child: Text(
+                                "상세",
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   );
                 },
