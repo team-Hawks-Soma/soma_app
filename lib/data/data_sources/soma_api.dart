@@ -7,6 +7,7 @@ import 'package:soma_museum_app/data/model/display/display_mapper.dart';
 import 'package:soma_museum_app/data/model/program/program.dart';
 import 'package:soma_museum_app/data/model/program/program_mapper.dart';
 import 'package:soma_museum_app/data/model/sculpture/sculpture.dart';
+import 'package:soma_museum_app/data/model/sculpture/sculpture_mapper.dart';
 
 class SomaApi {
   final _dio = DioClient();
@@ -61,7 +62,7 @@ class SomaApi {
 
       final result =
           (response.data['response']['body']['items']['item'] as List)
-              .map((e) => Sculpture.fromJson(e))
+              .map((e) => Sculpture.fromJson(e).clean())
               .toList();
 
       return result;
