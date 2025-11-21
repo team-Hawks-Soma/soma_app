@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:soma_museum_app/core/env_config.dart';
 import 'package:soma_museum_app/core/network/dio_client.dart';
-import 'package:soma_museum_app/data/model/display/display.dart';
-import 'package:soma_museum_app/data/model/display/display_mapper.dart';
+import 'package:soma_museum_app/data/model/display/dto/display.dart';
+import 'package:soma_museum_app/data/model/display/mapper/display_mapper.dart';
 import 'package:soma_museum_app/data/model/program/program.dart';
 import 'package:soma_museum_app/data/model/program/program_mapper.dart';
 import 'package:soma_museum_app/data/model/sculpture/sculpture.dart';
@@ -15,7 +15,7 @@ class SomaApi {
   // 전시 조회
   Future<List<Display>> getDisplays({
     int pageNo = 1,
-    int numOfRows = 20,
+    int numOfRows = 1000,
   }) async {
     try {
       final response = await _dio.get(
