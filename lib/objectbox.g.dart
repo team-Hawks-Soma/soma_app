@@ -14,7 +14,7 @@ import 'package:objectbox/internal.dart'
 import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
-import 'data/model/entity/display_entity.dart';
+import 'data/model/display/entity/display_entity.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 
@@ -22,14 +22,14 @@ final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
     id: const obx_int.IdUid(1, 6598904457189344182),
     name: 'DisplayEntity',
-    lastPropertyId: const obx_int.IdUid(19, 140771943080445964),
+    lastPropertyId: const obx_int.IdUid(20, 2830003741279689243),
     flags: 0,
     properties: <obx_int.ModelProperty>[
       obx_int.ModelProperty(
         id: const obx_int.IdUid(1, 1261951655537456339),
         name: 'id',
         type: 6,
-        flags: 129,
+        flags: 1,
       ),
       obx_int.ModelProperty(
         id: const obx_int.IdUid(2, 4953187496180601836),
@@ -139,6 +139,12 @@ final _entities = <obx_int.ModelEntity>[
         type: 9,
         flags: 0,
       ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(20, 2830003741279689243),
+        name: 'updatedAt',
+        type: 10,
+        flags: 0,
+      ),
     ],
     relations: <obx_int.ModelRelation>[],
     backlinks: <obx_int.ModelBacklink>[],
@@ -224,7 +230,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
         final pavlnCharstNmOffset = fbb.writeString(object.pavlnCharstNm);
         final dspyNmOffset = fbb.writeString(object.dspyNm);
         final dspyBgndeYmdOffset = fbb.writeString(object.dspyBgndeYmd);
-        fbb.startTable(20);
+        fbb.startTable(21);
         fbb.addInt64(0, object.id);
         fbb.addOffset(1, dspyEnddeYmdOffset);
         fbb.addOffset(2, dspyStateNmOffset);
@@ -244,6 +250,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
         fbb.addOffset(16, pavlnCharstNmOffset);
         fbb.addOffset(17, dspyNmOffset);
         fbb.addOffset(18, dspyBgndeYmdOffset);
+        fbb.addInt64(19, object.updatedAt.millisecondsSinceEpoch);
         fbb.finish(fbb.endTable());
         return object.id;
       },
@@ -310,6 +317,9 @@ obx_int.ModelDefinition getObjectBoxModel() {
         final dspyBgndeYmdParam = const fb.StringReader(
           asciiOptimization: true,
         ).vTableGet(buffer, rootOffset, 40, '');
+        final updatedAtParam = DateTime.fromMillisecondsSinceEpoch(
+          const fb.Int64Reader().vTableGet(buffer, rootOffset, 42, 0),
+        );
         final object = DisplayEntity(
           id: idParam,
           dspyEnddeYmd: dspyEnddeYmdParam,
@@ -330,6 +340,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
           pavlnCharstNm: pavlnCharstNmParam,
           dspyNm: dspyNmParam,
           dspyBgndeYmd: dspyBgndeYmdParam,
+          updatedAt: updatedAtParam,
         );
 
         return object;
@@ -435,5 +446,10 @@ class DisplayEntity_ {
   /// See [DisplayEntity.dspyBgndeYmd].
   static final dspyBgndeYmd = obx.QueryStringProperty<DisplayEntity>(
     _entities[0].properties[18],
+  );
+
+  /// See [DisplayEntity.updatedAt].
+  static final updatedAt = obx.QueryDateProperty<DisplayEntity>(
+    _entities[0].properties[19],
   );
 }

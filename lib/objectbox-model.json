@@ -5,14 +5,14 @@
   "entities": [
     {
       "id": "1:6598904457189344182",
-      "lastPropertyId": "19:140771943080445964",
+      "lastPropertyId": "20:2830003741279689243",
       "name": "DisplayEntity",
       "properties": [
         {
           "id": "1:1261951655537456339",
           "name": "id",
           "type": 6,
-          "flags": 129
+          "flags": 1
         },
         {
           "id": "2:4953187496180601836",
@@ -103,6 +103,11 @@
           "id": "19:140771943080445964",
           "name": "dspyBgndeYmd",
           "type": 9
+        },
+        {
+          "id": "20:2830003741279689243",
+          "name": "updatedAt",
+          "type": 10
         }
       ],
       "relations": []
