@@ -1,5 +1,6 @@
 import 'package:soma_museum_app/core/utils/text_utils.dart';
 import 'package:soma_museum_app/data/model/display/display.dart';
+import 'package:soma_museum_app/data/model/entity/display_entity.dart';
 
 extension DisplayMapper on Display {
   Display clean() {
@@ -22,6 +23,54 @@ extension DisplayMapper on Display {
       pavlnCharstNm: TextUtils.cleanCData(pavlnCharstNm),
       dspyNm: TextUtils.cleanCData(dspyNm),
       dspyBgndeYmd: TextUtils.formatDate(TextUtils.cleanCData(dspyBgndeYmd)),
+    );
+  }
+
+  DisplayEntity toEntity() {
+    return DisplayEntity(
+      dspyEnddeYmd: dspyEnddeYmd,
+      dspyStateNm: dspyStateNm,
+      placeNm: placeNm,
+      mnnstNm: mnnstNm,
+      writerNm: writerNm,
+      prdctNm: prdctNm,
+      timeCharstCn: timeCharstCn,
+      viewingCharstCn: viewingCharstCn,
+      ebookUrl: ebookUrl,
+      ebookNm: ebookNm,
+      dspyImageUrl: dspyImageUrl,
+      dspyImageNm: dspyImageNm,
+      dspyEngNm: dspyEngNm,
+      dspyEngCn: dspyEngCn,
+      regMngrNo: regMngrNo,
+      pavlnCharstNm: pavlnCharstNm,
+      dspyNm: dspyNm,
+      dspyBgndeYmd: dspyBgndeYmd,
+    );
+  }
+}
+
+extension DisplayEntityMapper on DisplayEntity {
+  Display toDto() {
+    return Display(
+      dspyEnddeYmd: dspyEnddeYmd,
+      dspyStateNm: dspyStateNm,
+      placeNm: placeNm,
+      mnnstNm: mnnstNm,
+      writerNm: writerNm,
+      prdctNm: prdctNm,
+      timeCharstCn: timeCharstCn,
+      viewingCharstCn: viewingCharstCn,
+      ebookUrl: ebookUrl,
+      ebookNm: ebookNm,
+      dspyImageUrl: dspyImageUrl,
+      dspyImageNm: dspyImageNm,
+      dspyEngNm: dspyEngNm,
+      dspyEngCn: dspyEngCn,
+      regMngrNo: regMngrNo,
+      pavlnCharstNm: pavlnCharstNm,
+      dspyNm: dspyNm,
+      dspyBgndeYmd: dspyBgndeYmd,
     );
   }
 }
