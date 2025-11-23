@@ -2,12 +2,10 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soma_museum_app/data/repositories/display/display_repository.dart';
-import 'package:soma_museum_app/presentation/providers/display/display_provider.dart';
-import 'package:soma_museum_app/presentation/providers/display/display_state.dart';
 import 'package:soma_museum_app/presentation/providers/home/home_state.dart';
 
-final homeProvider = AsyncNotifierProvider<DisplayNotifier, DisplayState>(
-  () => DisplayNotifier(),
+final homeProvider = AsyncNotifierProvider<HomeNotifier, HomeState>(
+  () => HomeNotifier(),
 );
 
 class HomeNotifier extends AsyncNotifier<HomeState> {
@@ -19,7 +17,7 @@ class HomeNotifier extends AsyncNotifier<HomeState> {
   @override
   Future<HomeState> build() async {
     try {
-      final displays = await _displayRepository.getDisplays();
+      final displays = await _displayRepository.getDisplays(limit: 2);
       return HomeState(displays: displays);
     } catch (e) {
       throw Exception(e);
