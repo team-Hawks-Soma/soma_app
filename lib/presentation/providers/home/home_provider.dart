@@ -17,7 +17,7 @@ class HomeNotifier extends AsyncNotifier<HomeState> {
   @override
   Future<HomeState> build() async {
     try {
-      final displays = await _displayRepository.getDisplays(limit: 2);
+      final displays = await _displayRepository.getDisplays(limit: 10);
       return HomeState(displays: displays);
     } catch (e) {
       throw Exception(e);
