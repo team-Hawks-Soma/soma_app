@@ -75,7 +75,7 @@ class SomaApi {
   // 교육 프로그램 조회
   Future<List<Program>> getPrograms({
     int pageNo = 1,
-    int numOfRows = 20,
+    int numOfRows = 1000,
   }) async {
     try {
       final response = await _dio.get(
