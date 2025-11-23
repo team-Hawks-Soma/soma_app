@@ -24,7 +24,7 @@ class DisplayRepository {
 
         // 로컬 캐시 유효하면 로컬 반환
         if (!isExpired) {
-          return localEntities.map((e) => e.toDto()).toList();
+          return _getOrderedDisplays();
         }
       }
 
@@ -36,17 +36,21 @@ class DisplayRepository {
       // DB 저장
       _db.saveList<DisplayEntity>(remoteList.map((e) => e.toEntity()).toList());
 
-      // 저장한 정렬하면서
-      final query =
-          (_db.box<DisplayEntity>().query()
-                ..order(DisplayEntity_.dspyBgndeYmd, flags: Order.descending))
-              .build();
-
-      final saved = query.find();
-      return saved.map((e) => e.toDto()).toList();
+      return _getOrderedDisplays();
     } catch (e) {
       log('DisplayRepository getDisplays Error: $e');
       rethrow;
     }
+  }
+
+  // 정렬한 Display List를 리턴
+  List<Display> _getOrderedDisplays() {
+    final query =
+        (_db.box<DisplayEntity>().query()
+              ..order(DisplayEntity_.dspyBgndeYmd, flags: Order.descending))
+            .build();
+
+    final saved = query.find();
+    return saved.map((e) => e.toDto()).toList();
   }
 }
