@@ -111,9 +111,93 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:7544629498127617848",
+      "lastPropertyId": "15:47236247921837235",
+      "name": "ProgramEntity",
+      "properties": [
+        {
+          "id": "1:734604752602406636",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3648839301636883195",
+          "name": "clssEndYmd",
+          "type": 9
+        },
+        {
+          "id": "3:590219795396982729",
+          "name": "simTextCn",
+          "type": 9
+        },
+        {
+          "id": "4:8804971047470798581",
+          "name": "letTxtCn",
+          "type": 9
+        },
+        {
+          "id": "5:9134639400883121596",
+          "name": "rowNum",
+          "type": 9
+        },
+        {
+          "id": "6:6560513610228372477",
+          "name": "placeNm",
+          "type": 9
+        },
+        {
+          "id": "7:261439654423592934",
+          "name": "ttnAmt",
+          "type": 9
+        },
+        {
+          "id": "8:6348817579363295129",
+          "name": "clssMbrCdNm",
+          "type": 9
+        },
+        {
+          "id": "9:1696257990267171453",
+          "name": "clssStYmd",
+          "type": 9
+        },
+        {
+          "id": "10:7457440966935304268",
+          "name": "rcvCCdNm",
+          "type": 9
+        },
+        {
+          "id": "11:5205539462612457135",
+          "name": "itemUrl",
+          "type": 9
+        },
+        {
+          "id": "12:9131518297694276468",
+          "name": "clssCNm",
+          "type": 9
+        },
+        {
+          "id": "13:8050714164108229189",
+          "name": "clssNm",
+          "type": 9
+        },
+        {
+          "id": "14:7306836256096091659",
+          "name": "clssCCdNm",
+          "type": 9
+        },
+        {
+          "id": "15:47236247921837235",
+          "name": "updatedAt",
+          "type": 10
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:6598904457189344182",
+  "lastEntityId": "2:7544629498127617848",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
