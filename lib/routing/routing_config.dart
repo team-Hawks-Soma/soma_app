@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:soma_museum_app/data/model/program/program.dart';
+import 'package:soma_museum_app/data/model/program/dto/program.dart';
 import 'package:soma_museum_app/data/model/sculpture/sculpture.dart';
 import 'package:soma_museum_app/presentation/screens/display/display_detail_screen.dart';
 import 'package:soma_museum_app/presentation/screens/display/display_screen.dart';

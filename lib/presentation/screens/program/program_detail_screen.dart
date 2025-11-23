@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soma_museum_app/data/model/program/program.dart';
+import 'package:soma_museum_app/data/model/program/dto/program.dart';
 
 class ProgramDetailScreen extends ConsumerWidget {
   final Program program;
