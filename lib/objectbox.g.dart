@@ -15,6 +15,7 @@ import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
 import 'data/model/display/entity/display_entity.dart';
+import 'data/model/program/entity/program_entity.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 
@@ -149,6 +150,106 @@ final _entities = <obx_int.ModelEntity>[
     relations: <obx_int.ModelRelation>[],
     backlinks: <obx_int.ModelBacklink>[],
   ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(2, 7544629498127617848),
+    name: 'ProgramEntity',
+    lastPropertyId: const obx_int.IdUid(15, 47236247921837235),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 734604752602406636),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 3648839301636883195),
+        name: 'clssEndYmd',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 590219795396982729),
+        name: 'simTextCn',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 8804971047470798581),
+        name: 'letTxtCn',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 9134639400883121596),
+        name: 'rowNum',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 6560513610228372477),
+        name: 'placeNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 261439654423592934),
+        name: 'ttnAmt',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 6348817579363295129),
+        name: 'clssMbrCdNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 1696257990267171453),
+        name: 'clssStYmd',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 7457440966935304268),
+        name: 'rcvCCdNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 5205539462612457135),
+        name: 'itemUrl',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 9131518297694276468),
+        name: 'clssCNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 8050714164108229189),
+        name: 'clssNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(14, 7306836256096091659),
+        name: 'clssCCdNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(15, 47236247921837235),
+        name: 'updatedAt',
+        type: 10,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
 ];
 
 /// Shortcut for [obx.Store.new] that passes [getObjectBoxModel] and for Flutter
@@ -189,7 +290,7 @@ Future<obx.Store> openStore({
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
     entities: _entities,
-    lastEntityId: const obx_int.IdUid(1, 6598904457189344182),
+    lastEntityId: const obx_int.IdUid(2, 7544629498127617848),
     lastIndexId: const obx_int.IdUid(0, 0),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
@@ -346,6 +447,119 @@ obx_int.ModelDefinition getObjectBoxModel() {
         return object;
       },
     ),
+    ProgramEntity: obx_int.EntityDefinition<ProgramEntity>(
+      model: _entities[1],
+      toOneRelations: (ProgramEntity object) => [],
+      toManyRelations: (ProgramEntity object) => {},
+      getId: (ProgramEntity object) => object.id,
+      setId: (ProgramEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (ProgramEntity object, fb.Builder fbb) {
+        final clssEndYmdOffset = fbb.writeString(object.clssEndYmd);
+        final simTextCnOffset = fbb.writeString(object.simTextCn);
+        final letTxtCnOffset = fbb.writeString(object.letTxtCn);
+        final rowNumOffset = fbb.writeString(object.rowNum);
+        final placeNmOffset = fbb.writeString(object.placeNm);
+        final ttnAmtOffset = fbb.writeString(object.ttnAmt);
+        final clssMbrCdNmOffset = fbb.writeString(object.clssMbrCdNm);
+        final clssStYmdOffset = fbb.writeString(object.clssStYmd);
+        final rcvCCdNmOffset = fbb.writeString(object.rcvCCdNm);
+        final itemUrlOffset = fbb.writeString(object.itemUrl);
+        final clssCNmOffset = fbb.writeString(object.clssCNm);
+        final clssNmOffset = fbb.writeString(object.clssNm);
+        final clssCCdNmOffset = fbb.writeString(object.clssCCdNm);
+        fbb.startTable(16);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, clssEndYmdOffset);
+        fbb.addOffset(2, simTextCnOffset);
+        fbb.addOffset(3, letTxtCnOffset);
+        fbb.addOffset(4, rowNumOffset);
+        fbb.addOffset(5, placeNmOffset);
+        fbb.addOffset(6, ttnAmtOffset);
+        fbb.addOffset(7, clssMbrCdNmOffset);
+        fbb.addOffset(8, clssStYmdOffset);
+        fbb.addOffset(9, rcvCCdNmOffset);
+        fbb.addOffset(10, itemUrlOffset);
+        fbb.addOffset(11, clssCNmOffset);
+        fbb.addOffset(12, clssNmOffset);
+        fbb.addOffset(13, clssCCdNmOffset);
+        fbb.addInt64(14, object.updatedAt.millisecondsSinceEpoch);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final clssEndYmdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final simTextCnParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final letTxtCnParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 10, '');
+        final rowNumParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 12, '');
+        final placeNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 14, '');
+        final ttnAmtParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 16, '');
+        final clssMbrCdNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 18, '');
+        final clssStYmdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 20, '');
+        final rcvCCdNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 22, '');
+        final itemUrlParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 24, '');
+        final clssCNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 26, '');
+        final clssNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 28, '');
+        final clssCCdNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 30, '');
+        final updatedAtParam = DateTime.fromMillisecondsSinceEpoch(
+          const fb.Int64Reader().vTableGet(buffer, rootOffset, 32, 0),
+        );
+        final object = ProgramEntity(
+          id: idParam,
+          clssEndYmd: clssEndYmdParam,
+          simTextCn: simTextCnParam,
+          letTxtCn: letTxtCnParam,
+          rowNum: rowNumParam,
+          placeNm: placeNmParam,
+          ttnAmt: ttnAmtParam,
+          clssMbrCdNm: clssMbrCdNmParam,
+          clssStYmd: clssStYmdParam,
+          rcvCCdNm: rcvCCdNmParam,
+          itemUrl: itemUrlParam,
+          clssCNm: clssCNmParam,
+          clssNm: clssNmParam,
+          clssCCdNm: clssCCdNmParam,
+          updatedAt: updatedAtParam,
+        );
+
+        return object;
+      },
+    ),
   };
 
   return obx_int.ModelDefinition(model, bindings);
@@ -451,5 +665,83 @@ class DisplayEntity_ {
   /// See [DisplayEntity.updatedAt].
   static final updatedAt = obx.QueryDateProperty<DisplayEntity>(
     _entities[0].properties[19],
+  );
+}
+
+/// [ProgramEntity] entity fields to define ObjectBox queries.
+class ProgramEntity_ {
+  /// See [ProgramEntity.id].
+  static final id = obx.QueryIntegerProperty<ProgramEntity>(
+    _entities[1].properties[0],
+  );
+
+  /// See [ProgramEntity.clssEndYmd].
+  static final clssEndYmd = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[1],
+  );
+
+  /// See [ProgramEntity.simTextCn].
+  static final simTextCn = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[2],
+  );
+
+  /// See [ProgramEntity.letTxtCn].
+  static final letTxtCn = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[3],
+  );
+
+  /// See [ProgramEntity.rowNum].
+  static final rowNum = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[4],
+  );
+
+  /// See [ProgramEntity.placeNm].
+  static final placeNm = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[5],
+  );
+
+  /// See [ProgramEntity.ttnAmt].
+  static final ttnAmt = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[6],
+  );
+
+  /// See [ProgramEntity.clssMbrCdNm].
+  static final clssMbrCdNm = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[7],
+  );
+
+  /// See [ProgramEntity.clssStYmd].
+  static final clssStYmd = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[8],
+  );
+
+  /// See [ProgramEntity.rcvCCdNm].
+  static final rcvCCdNm = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[9],
+  );
+
+  /// See [ProgramEntity.itemUrl].
+  static final itemUrl = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[10],
+  );
+
+  /// See [ProgramEntity.clssCNm].
+  static final clssCNm = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[11],
+  );
+
+  /// See [ProgramEntity.clssNm].
+  static final clssNm = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[12],
+  );
+
+  /// See [ProgramEntity.clssCCdNm].
+  static final clssCCdNm = obx.QueryStringProperty<ProgramEntity>(
+    _entities[1].properties[13],
+  );
+
+  /// See [ProgramEntity.updatedAt].
+  static final updatedAt = obx.QueryDateProperty<ProgramEntity>(
+    _entities[1].properties[14],
   );
 }
