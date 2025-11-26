@@ -13,7 +13,7 @@ class DisplayRepository {
 
   final expiredHours = 24;
 
-  Future<List<Display>> getDisplays() async {
+  Future<List<Display>> getDisplays({int? limit}) async {
     try {
       final localEntities = _db.getAll<DisplayEntity>();
 
@@ -24,7 +24,7 @@ class DisplayRepository {
 
         // 로컬 캐시 유효하면 로컬 반환
         if (!isExpired) {
-          return _getOrderedDisplays();
+          return _getOrderedDisplays(limit: limit);
         }
       }
 
@@ -36,7 +36,7 @@ class DisplayRepository {
       // DB 저장
       _db.saveList<DisplayEntity>(remoteList.map((e) => e.toEntity()).toList());
 
-      return _getOrderedDisplays();
+      return _getOrderedDisplays(limit: limit);
     } catch (e) {
       log('DisplayRepository getDisplays Error: $e');
       rethrow;
@@ -44,11 +44,15 @@ class DisplayRepository {
   }
 
   // 정렬한 Display List를 리턴
-  List<Display> _getOrderedDisplays() {
+  List<Display> _getOrderedDisplays({int? limit}) {
     final query =
         (_db.box<DisplayEntity>().query()
               ..order(DisplayEntity_.dspyBgndeYmd, flags: Order.descending))
             .build();
+
+    if (limit != null) {
+      query.limit = limit;
+    }
 
     final saved = query.find();
     return saved.map((e) => e.toDto()).toList();

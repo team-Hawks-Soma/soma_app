@@ -2,6 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:soma_museum_app/data/model/display/dto/display.dart';
+import 'package:soma_museum_app/presentation/providers/home/home_provider.dart';
+import 'package:soma_museum_app/presentation/providers/navigation_provider.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -26,56 +30,88 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final homeAsync = ref.watch(homeProvider);
     return Scaffold(
-      body: SingleChildScrollView(
-        controller: scrollController,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 24.h),
-            // 전시 안내
-            _buildExhibitionSection(),
-            SizedBox(height: 24.h),
-            // 소장품 안내
-            _buildCollectionSection(),
-            SizedBox(height: 24.h),
-            // 교육프로그램 안내
-            _buildEducationSection(),
-            SizedBox(height: 24.h),
-          ],
+      body: SafeArea(
+        child: homeAsync.when(
+          data: (state) {
+            return SingleChildScrollView(
+              controller: scrollController,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 24.h),
+                  // 전시 안내
+                  _buildDisplaySection(state.displays),
+                  SizedBox(height: 24.h),
+                  // 소장품 안내
+                  _buildCollectionSection(),
+                  SizedBox(height: 24.h),
+                  // 교육프로그램 안내
+                  _buildEducationSection(),
+                  SizedBox(height: 24.h),
+                ],
+              ),
+            );
+          },
+          error: (e, s) {
+            return Center(child: Text('$e'));
+          },
+          loading: () {
+            return Center(child: CircularProgressIndicator());
+          },
         ),
       ),
     );
   }
 
   // 전시 안내
-  Widget _buildExhibitionSection() {
-    final exhibitions = List.generate(5, (index) => '전시회 ${index + 1}');
-
+  Widget _buildDisplaySection(List<Display> displays) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '전시안내',
-            style: TextStyle(
-              fontSize: 17.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '전시안내',
+                style: TextStyle(
+                  fontSize: 17.sp,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  ref.read(navigationProvider.notifier).setIndex(1);
+                },
+                child: Text(
+                  '더보기',
+                  style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 12.h),
           CarouselSlider(
-            options: CarouselOptions(height: 200.0.h),
-            items: exhibitions.map((i) {
+            options: CarouselOptions(
+              height: 200.0.h,
+              enlargeCenterPage: true,
+              viewportFraction: 0.5,
+              autoPlay: true,
+              autoPlayAnimationDuration: Duration(milliseconds: 800),
+              autoPlayInterval: Duration(seconds: 5),
+            ),
+            items: displays.map((display) {
               return Builder(
                 builder: (BuildContext context) {
-                  return Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0.w),
-                    decoration: BoxDecoration(color: Colors.amber),
-                    child: Text('text $i', style: TextStyle(fontSize: 16.0.sp)),
+                  return GestureDetector(
+                    onTap: () {
+                      context.push('/display/detail', extra: display);
+                    },
+                    child: Image.network(display.dspyImageUrl),
                   );
                 },
               );
