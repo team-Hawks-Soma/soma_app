@@ -40,7 +40,7 @@ class SearchScreen extends ConsumerWidget {
           ),
         ),
       ),
-      
+
       body: Padding(
         padding: EdgeInsets.all(16.w),
         child: results.isEmpty

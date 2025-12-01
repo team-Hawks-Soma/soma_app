@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:soma_museum_app/data/model/program/program.dart';
-import 'package:soma_museum_app/data/model/sculpture/sculpture.dart';
+import 'package:soma_museum_app/data/model/sculpture/dto/sculpture.dart';
 import 'package:soma_museum_app/presentation/screens/display/display_detail_screen.dart';
 import 'package:soma_museum_app/presentation/screens/display/display_screen.dart';
 import 'package:soma_museum_app/presentation/screens/home/home_screen.dart';
@@ -9,6 +9,7 @@ import 'package:soma_museum_app/presentation/screens/program/program_detail_scre
 import 'package:soma_museum_app/presentation/screens/program/program_screen.dart';
 import 'package:soma_museum_app/presentation/screens/sculpture/sculpture_detail_screen.dart';
 import 'package:soma_museum_app/presentation/screens/sculpture/sculpture_screen.dart';
+import 'package:soma_museum_app/presentation/screens/search/search_screen.dart';
 
 import '../data/model/display/dto/display.dart';
 
@@ -20,6 +21,7 @@ class RoutingConfig {
         path: '/',
         builder: (_, __) => NavigationScreen(),
         routes: [
+          GoRoute(path: '/search', builder: (_, __) => SearchScreen()),
           GoRoute(path: '/home', builder: (_, __) => HomeScreen()),
           GoRoute(
             path: '/display',

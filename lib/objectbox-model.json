@@ -111,9 +111,83 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:3301241342219723367",
+      "lastPropertyId": "13:7561527051738708480",
+      "name": "SculptureEntity",
+      "properties": [
+        {
+          "id": "1:2778466307051098826",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2701843866171684373",
+          "name": "titleKoNm",
+          "type": 9
+        },
+        {
+          "id": "3:4540772380721652610",
+          "name": "titleEnNm",
+          "type": 9
+        },
+        {
+          "id": "4:6571981839767290068",
+          "name": "sclptrSz",
+          "type": 9
+        },
+        {
+          "id": "5:4468095829977707783",
+          "name": "mtrqltNm",
+          "type": 9
+        },
+        {
+          "id": "6:8147677184972149608",
+          "name": "artistKoNm",
+          "type": 9
+        },
+        {
+          "id": "7:8670416249006381901",
+          "name": "artistEnNm",
+          "type": 9
+        },
+        {
+          "id": "8:235489591891654167",
+          "name": "nationNm",
+          "type": 9
+        },
+        {
+          "id": "9:3292198911560156424",
+          "name": "purchasedYmd",
+          "type": 9
+        },
+        {
+          "id": "10:6023257406673743695",
+          "name": "locationNm",
+          "type": 9
+        },
+        {
+          "id": "11:5050471466424183263",
+          "name": "prdctOriginNm",
+          "type": 9
+        },
+        {
+          "id": "12:288262033189662413",
+          "name": "imageUrl",
+          "type": 9
+        },
+        {
+          "id": "13:7561527051738708480",
+          "name": "updatedAt",
+          "type": 10
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:6598904457189344182",
+  "lastEntityId": "2:3301241342219723367",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

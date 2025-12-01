@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:soma_museum_app/presentation/screens/display/display_screen.dart';
 import 'package:soma_museum_app/presentation/screens/home/home_screen.dart';
 import 'package:soma_museum_app/presentation/screens/program/program_screen.dart';
@@ -27,6 +28,15 @@ class NavigationScreen extends ConsumerWidget {
         title: const Text("소마미술관"),
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              context.push('/search');
+              print('검색 버튼 클릭');
+            },
+          ),
+        ],
       ),
       body: IndexedStack(index: index, children: screens),
       bottomNavigationBar: const CustomNavigationBar(),

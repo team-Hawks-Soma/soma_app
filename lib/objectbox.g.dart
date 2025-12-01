@@ -15,6 +15,7 @@ import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
 import 'data/model/display/entity/display_entity.dart';
+import 'data/model/sculpture/entity/sculpture_entity.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 
@@ -149,6 +150,94 @@ final _entities = <obx_int.ModelEntity>[
     relations: <obx_int.ModelRelation>[],
     backlinks: <obx_int.ModelBacklink>[],
   ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(2, 3301241342219723367),
+    name: 'SculptureEntity',
+    lastPropertyId: const obx_int.IdUid(13, 7561527051738708480),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 2778466307051098826),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 2701843866171684373),
+        name: 'titleKoNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 4540772380721652610),
+        name: 'titleEnNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 6571981839767290068),
+        name: 'sclptrSz',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 4468095829977707783),
+        name: 'mtrqltNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 8147677184972149608),
+        name: 'artistKoNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 8670416249006381901),
+        name: 'artistEnNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 235489591891654167),
+        name: 'nationNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 3292198911560156424),
+        name: 'purchasedYmd',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 6023257406673743695),
+        name: 'locationNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 5050471466424183263),
+        name: 'prdctOriginNm',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 288262033189662413),
+        name: 'imageUrl',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 7561527051738708480),
+        name: 'updatedAt',
+        type: 10,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
 ];
 
 /// Shortcut for [obx.Store.new] that passes [getObjectBoxModel] and for Flutter
@@ -189,7 +278,7 @@ Future<obx.Store> openStore({
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
     entities: _entities,
-    lastEntityId: const obx_int.IdUid(1, 6598904457189344182),
+    lastEntityId: const obx_int.IdUid(2, 3301241342219723367),
     lastIndexId: const obx_int.IdUid(0, 0),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
@@ -346,6 +435,107 @@ obx_int.ModelDefinition getObjectBoxModel() {
         return object;
       },
     ),
+    SculptureEntity: obx_int.EntityDefinition<SculptureEntity>(
+      model: _entities[1],
+      toOneRelations: (SculptureEntity object) => [],
+      toManyRelations: (SculptureEntity object) => {},
+      getId: (SculptureEntity object) => object.id,
+      setId: (SculptureEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (SculptureEntity object, fb.Builder fbb) {
+        final titleKoNmOffset = fbb.writeString(object.titleKoNm);
+        final titleEnNmOffset = fbb.writeString(object.titleEnNm);
+        final sclptrSzOffset = fbb.writeString(object.sclptrSz);
+        final mtrqltNmOffset = fbb.writeString(object.mtrqltNm);
+        final artistKoNmOffset = fbb.writeString(object.artistKoNm);
+        final artistEnNmOffset = fbb.writeString(object.artistEnNm);
+        final nationNmOffset = fbb.writeString(object.nationNm);
+        final purchasedYmdOffset = fbb.writeString(object.purchasedYmd);
+        final locationNmOffset = fbb.writeString(object.locationNm);
+        final prdctOriginNmOffset = fbb.writeString(object.prdctOriginNm);
+        final imageUrlOffset = fbb.writeString(object.imageUrl);
+        fbb.startTable(14);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, titleKoNmOffset);
+        fbb.addOffset(2, titleEnNmOffset);
+        fbb.addOffset(3, sclptrSzOffset);
+        fbb.addOffset(4, mtrqltNmOffset);
+        fbb.addOffset(5, artistKoNmOffset);
+        fbb.addOffset(6, artistEnNmOffset);
+        fbb.addOffset(7, nationNmOffset);
+        fbb.addOffset(8, purchasedYmdOffset);
+        fbb.addOffset(9, locationNmOffset);
+        fbb.addOffset(10, prdctOriginNmOffset);
+        fbb.addOffset(11, imageUrlOffset);
+        fbb.addInt64(12, object.updatedAt.millisecondsSinceEpoch);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final titleKoNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final titleEnNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final sclptrSzParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 10, '');
+        final mtrqltNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 12, '');
+        final artistKoNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 14, '');
+        final artistEnNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 16, '');
+        final nationNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 18, '');
+        final purchasedYmdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 20, '');
+        final locationNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 22, '');
+        final prdctOriginNmParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 24, '');
+        final imageUrlParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 26, '');
+        final updatedAtParam = DateTime.fromMillisecondsSinceEpoch(
+          const fb.Int64Reader().vTableGet(buffer, rootOffset, 28, 0),
+        );
+        final object = SculptureEntity(
+          id: idParam,
+          titleKoNm: titleKoNmParam,
+          titleEnNm: titleEnNmParam,
+          sclptrSz: sclptrSzParam,
+          mtrqltNm: mtrqltNmParam,
+          artistKoNm: artistKoNmParam,
+          artistEnNm: artistEnNmParam,
+          nationNm: nationNmParam,
+          purchasedYmd: purchasedYmdParam,
+          locationNm: locationNmParam,
+          prdctOriginNm: prdctOriginNmParam,
+          imageUrl: imageUrlParam,
+          updatedAt: updatedAtParam,
+        );
+
+        return object;
+      },
+    ),
   };
 
   return obx_int.ModelDefinition(model, bindings);
@@ -451,5 +641,73 @@ class DisplayEntity_ {
   /// See [DisplayEntity.updatedAt].
   static final updatedAt = obx.QueryDateProperty<DisplayEntity>(
     _entities[0].properties[19],
+  );
+}
+
+/// [SculptureEntity] entity fields to define ObjectBox queries.
+class SculptureEntity_ {
+  /// See [SculptureEntity.id].
+  static final id = obx.QueryIntegerProperty<SculptureEntity>(
+    _entities[1].properties[0],
+  );
+
+  /// See [SculptureEntity.titleKoNm].
+  static final titleKoNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[1],
+  );
+
+  /// See [SculptureEntity.titleEnNm].
+  static final titleEnNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[2],
+  );
+
+  /// See [SculptureEntity.sclptrSz].
+  static final sclptrSz = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[3],
+  );
+
+  /// See [SculptureEntity.mtrqltNm].
+  static final mtrqltNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[4],
+  );
+
+  /// See [SculptureEntity.artistKoNm].
+  static final artistKoNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[5],
+  );
+
+  /// See [SculptureEntity.artistEnNm].
+  static final artistEnNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[6],
+  );
+
+  /// See [SculptureEntity.nationNm].
+  static final nationNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[7],
+  );
+
+  /// See [SculptureEntity.purchasedYmd].
+  static final purchasedYmd = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[8],
+  );
+
+  /// See [SculptureEntity.locationNm].
+  static final locationNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[9],
+  );
+
+  /// See [SculptureEntity.prdctOriginNm].
+  static final prdctOriginNm = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[10],
+  );
+
+  /// See [SculptureEntity.imageUrl].
+  static final imageUrl = obx.QueryStringProperty<SculptureEntity>(
+    _entities[1].properties[11],
+  );
+
+  /// See [SculptureEntity.updatedAt].
+  static final updatedAt = obx.QueryDateProperty<SculptureEntity>(
+    _entities[1].properties[12],
   );
 }
