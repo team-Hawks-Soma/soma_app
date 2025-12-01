@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:soma_museum_app/data/model/program/program.dart';
+import 'package:soma_museum_app/data/model/program/dto/program.dart';
 
 part 'program_state.freezed.dart';
 part 'program_state.g.dart';
