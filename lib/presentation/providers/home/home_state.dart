@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:soma_museum_app/data/model/display/dto/display.dart';
-import 'package:soma_museum_app/data/model/program/program.dart';
-import 'package:soma_museum_app/data/model/sculpture/sculpture.dart';
+import 'package:soma_museum_app/data/model/program/dto/program.dart';
+import 'package:soma_museum_app/data/model/sculpture/dto/sculpture.dart';
 
 part 'home_state.freezed.dart';
 part 'home_state.g.dart';

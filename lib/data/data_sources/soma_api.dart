@@ -4,8 +4,8 @@ import 'package:soma_museum_app/core/env_config.dart';
 import 'package:soma_museum_app/core/network/dio_client.dart';
 import 'package:soma_museum_app/data/model/display/dto/display.dart';
 import 'package:soma_museum_app/data/model/display/mapper/display_mapper.dart';
-import 'package:soma_museum_app/data/model/program/program.dart';
-import 'package:soma_museum_app/data/model/program/program_mapper.dart';
+import 'package:soma_museum_app/data/model/program/dto/program.dart';
+import 'package:soma_museum_app/data/model/program/mapper/program_mapper.dart';
 import 'package:soma_museum_app/data/model/sculpture/dto/sculpture.dart';
 import 'package:soma_museum_app/data/model/sculpture/mapper/sculpture_mapper.dart';
 
